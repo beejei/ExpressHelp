@@ -1,0 +1,51 @@
+mixin Head(type)
+	meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+	link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
+	link(rel="stylesheet",href="/css/prettify.css")
+	link(rel="stylesheet",href="/css/bootstrap.min.css")
+	link(rel="stylesheet",href="/css/redmond/jquery-ui-1.8.21.custom.css")
+	link(rel="stylesheet/less",href="/css/less/svor.less")
+	script(src="/js/json2.js")
+	script(src="/js/jquery-1.7.2.min.js")
+	script(src="/js/jquery.formparams.js")
+	script(src="/js/bootstrap.min.js")
+	script(src="/js/less-1.2.2.min.js")
+	script(src='/js/jquery-ui-1.8.21.custom.min.js')
+	script(src="/js/doT/doT.min.js")
+	script(src="/js/browser.js")
+
+mixin Topbar(MY)
+	.navbar.navbar-fixed-top
+		.navbar-inner
+			.container
+				a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.brand(href='/') NODECONF 2012
+				.nav-collapse
+				a.pull-right(href='/logout',style='padding:10px 0 0 0;') Logout
+
+
+mixin Footer()
+	.footer
+		p.pull-right
+			a(href="#") 맨 위로 가기
+		p
+			| Bootstrap
+
+mixin Tail
+	script(src="/js/google-code-prettify/prettify.js")
+	script(src="/js/bootstrap-transition.js")
+	script(src="/js/bootstrap-alert.js")
+	script(src="/js/bootstrap-modal.js")
+	script(src="/js/bootstrap-dropdown.js")
+	script(src="/js/bootstrap-scrollspy.js")
+	script(src="/js/bootstrap-tab.js")
+	script(src="/js/bootstrap-tooltip.js")
+	script(src="/js/bootstrap-popover.js")
+	script(src="/js/bootstrap-button.js")
+	script(src="/js/bootstrap-collapse.js")
+	script(src="/js/bootstrap-carousel.js")
+	script(src="/js/bootstrap-typeahead.js")
+	script(src="/js/application.js")

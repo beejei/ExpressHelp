@@ -1,0 +1,66 @@
+## __Lisn.me API__ ![Logo](/img/favicon_lisnme.ico)
+
+**/api/...**
+	초기 api로 하위호환을 위해 interface 변경을 하지 않을 예정입니다.
+
+**/a/v2/...**
+	신형 다운로더 설계 이후 시점에 만들어진 api로 interface가 변경되는 api는 이 네이밍 룰을 따르게 됩니다.
+	새로 만들어지는 기능은 되도록 v2 api 사용을 권장합니다.
+
+챠트
+	[Chartstd](#Chartstd)
+	[RealChart](#RealChart)
+	[SogDailyChart](#SogDailyChart)
+	[SogWeeklyChart](#SogWeeklyChart)
+	[SogMonthlyChart](#SogMonthlyChart)
+	[AlbWeeklyChart](#AlbWeeklyChart)
+	[ArtWeeklyChart](#ArtWeeklyChart)
+	[TrackSogDailyChart](#TrackSogDailyChart)
+	[TrackSogWeeklyChart](#TrackSogWeeklyChart)
+	[TrackSogMonthlyChart](#TrackSogMonthlyChart)
+	[TrackAlbWeeklyChart](#TrackAlbWeeklyChart)
+	[TrackArtWeeklyChart](#TrackArtWeeklyChart)
+
+* * *
+
+###65. [/a/v2/ChartStd](/a/v2/ChartStd?typ=SOG&gnr=TO&&std=REL) 공통 / GET <a id="Chartstd" href="#ChartStd">#</a>
+데이터가 있는 챠트 목록을 가져옵니다
+로그인 세션 cookie 필요없음
+
+**query parameter**
+
+	typ : 집계타입(SOG, ALB, ALT, TRKSOG, TRKALB, TRKART)
+	std : 기간타입(REL,DLY,WLY,MLY)
+	gnr : 장르
+
+**return value**
+
+	*월별챠트*
+	[
+		{
+			std_ym: "201201"
+		},
+		...
+	]
+	*주별챠트*
+	[
+		{
+			std_ymw: "20120205"
+		},
+		...
+	]
+	*일별챠트*
+	[
+		{
+			std_ymd: "20120214"
+		},
+		...
+	]
+	*실시간*
+	[
+		{
+			std_ymdh: "2012021413"
+		},
+		...
+	]
+

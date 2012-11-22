@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NODECONF DEMO PAGE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/prettify.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/redmond/jquery-ui-1.8.21.custom.css"/>
+    <link rel="stylesheet/less" href="/css/less/svor.less"/>
+    <script src="/js/json2.js"></script>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/jquery.formparams.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/less-1.2.2.min.js"></script>
+    <script src="/js/jquery-ui-1.8.21.custom.min.js"></script>
+    <script src="/js/doT/doT.min.js"></script>
+    <script src="/js/browser.js"></script>
+    <script src="/js/ajaxupload.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container"><a data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a href="/" class="brand">NODECONF 2012</a>
+          <div class="nav-collapse"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <section>
+		<form method='GET' action='/euc-kr-get'>
+		  <fieldset>
+			<legend>EUC-KR Get Form</legend>
+			<label>내 이름은</label>
+			<input type="text" name="name" placeholder="Type something…">
+			<span class="help-block">버튼을 누르시면 EUC-KR로 폼 내용이 전달됩니다.</span>
+			<button type="submit" class="btn">Submit</button>
+		  </fieldset>
+		</form>		
+      </section>
+      <hr>
+    </div>
+    <div class="footer">
+      <p class="pull-right"><a href="#">맨 위로 가기</a></p>
+      <p>Bootstrap</p>
+    </div>
+    <script type="text/javascript"></script>
+  </body>
+</html>

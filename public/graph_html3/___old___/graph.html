@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리포트-그래프샘플</title>
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.css" type="text/css"/>
+<style type="text/css">
+h2{padding:1.5em 0 .5em}
+h3{padding:.3em 0}
+.graph{position:relative;margin-bottom:50px}
+.graph-y{height:200px}
+.graph-ground{position:absolute;top:0;right:0;width:100%;height:100%}
+.graph-bar{position:absolute;top:0;right:0;height:100%}
+.graph-text{position:absolute;bottom:-40px;right:0}
+.graph-bar .bar-wrap{position:relative;height:100%;text-align:center}
+.graph-bar .bar{display:inline-block;position:absolute;bottom:-1px;border:1px solid #252f99;border-bottom:0 none}
+.graph-y.graph-percent .graph-ground{width:93%;border:1px solid #d3d3d3}
+.graph-y.graph-percent .graph-ground span{display:inline-block;position:absolute;top:100px;left:-50px;margin:0;width:50px;font-size:.9em;line-height:1}
+.graph-y.graph-percent .graph-ground span em{float:right;width:7px;height:1px;overflow:hidden;border-top:1px solid #222}
+.graph-y.graph-percent .graph-ground span small{float:left;margin-top:-4px}
+.graph-y.graph-percent .graph-ground hr{position:absolute;top:100px;margin:0;width:100%}
+.graph-y.graph-percent .graph-bar{width:93%}
+.graph-y.graph-percent .graph-bar .bar{left:39%;width:57px;background-color:#3f4fff}
+.graph-y.graph-percent .graph-text{width:93%;text-align:center}
+h1,h2,h3,h4,h5,h6 {
+  text-rendering: auto;
+}
+</style>
+</head>
+<body>
+
+<hr/>
+<div id="myElement" class="container">
+	<p style='font-size: 24px;font-weight: bold;'>Probably you can read this --- 결과: TOTAL (%)</p>
+	<div class="graph graph-y graph-percent">
+		<div class="graph-ground">
+			<span><em></em><small>50%</small></span><hr/>
+		</div>
+		<div class="graph-bar row-fluid">
+			<div class="span4 bar-wrap"><div class="bar" style="height:70%"><img src="./img/graph.gif"/></div></div>
+			<div class="span4 bar-wrap"><div class="bar" style="height:63%"><img src="./img/graph.gif"/></div></div>
+			<div class="span4 bar-wrap"><div class="bar" style="height:33%"><img src="./img/graph.gif"/></div></div>
+		</div>
+		<div class="graph-text row-fluid">
+			<div class="span4">본인 리더쉽 스코어<br/>(상사/동료/부하)</div>
+			<div class="span4">자기평가<br/>(Self)</div>
+			<div class="span4">Function 직급 평균</div>
+		</div>
+	</div>
+	<h2> But you cannot read this --- 객관식 문항별 점수</h2>
+	<table class="table table-bordered table-condensed">
+	<thead>
+		<tr>
+			<th rowspan="2">평가영역</th>
+			<th rowspan="2">역량</th>
+			<th rowspan="2" colspan="2">문항</th>
+			<th colspan="4">평가주체</th>
+		</tr>
+		<tr>
+			<th>자기</th>
+			<th>상사</th>
+			<th>동료</th>
+			<th>부하</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="10">Client</td>
+			<td rowspan="3">고객 지향</td>
+			<td>1</td>
+			<td>고객과의 신뢰를 바탕으로 장기적인 협력관계를 지속한다.</td>
+			<td>9</td>
+			<td>6</td>
+			<td>9</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td></td>
+			<td>9</td>
+			<td>5</td>
+			<td>9</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>변화하는 고객의 요구사항을 업무에 적극 반영한다.</td>
+			<td>9</td>
+			<td>7</td>
+			<td>9</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td rowspan="3">성과지향</td>
+			<td>4</td>
+			<td>구성원들이 본인의 성과에 대해 스스로 책임질 수 있는 분위기를 조성한다.</td>
+			<td>9</td>
+			<td>6</td>
+			<td>9</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>법인의 성과에 부합될 수 있도록 개개인의 성과 목표를 제시한다.</td>
+			<td>7</td>
+			<td>5</td>
+			<td>9</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>성과 달성 과정 및 결과에 대한 적절한 피드백을 제공한다.</td>
+			<td>8</td>
+			<td>5</td>
+			<td>6</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td rowspan="4">전문성</td>
+			<td>7</td>
+			<td>미래의 사업 기회 및 트렌드를 앞서 파악하여 시장을 리드한다.</td>
+			<td>9</td>
+			<td>6</td>
+			<td>9</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>시장의 변화나 기회를 파악하여 새로운 서비스 영역을 적극 발굴한다.</td>
+			<td>7</td>
+			<td>5</td>
+			<td>9</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>업계의 향후 전망을 고려하여 중장기 대응 전략을 수립한다.</td>
+			<td>8</td>
+			<td>5</td>
+			<td>6</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>자신의 전문 분야에 관한 풍부한 지식과 경험을 토대로 구성원들을 리드한다.</td>
+			<td>8</td>
+			<td>5</td>
+			<td>6</td>
+			<td>9</td>
+		</tr>
+	</tbody>
+	</table>
+	<h2>주관식</h2>
+	<div class="row">
+		<div class="span6">
+			<h3>장점 및 단점</h3>
+			<blockquote>
+			<p>
+				판타지라 함은 누구나 다 환상적이고 몽매함을 생각한다.
+		허나, 얼불노(얼음과 불의 노래)에선 아직까진 존재하지 않는다.
+		왕국을 지키기 위한 계략과 가문을 수호하기 위한 전략만이 있을 뿐이다.
+		하지만, 이 드라마는 판타지다.
+		마법과 용이 등장하는 판타지이다.
+		왕국의 북쪽, 장벽 넘어엔 인간을 초월하는 괴물(?)들이 존재한다.
+		그래서 겨울이 오면 인간들은 그들을 막기위해 생사를 건다.
+		북쪽은 그들을 막고, 왕국의 중심에선 왕권을 차지하기 위해 온갖 계책과 모략으로 가문간의 치열한 싸움이 지속된다.
+		판타지를 위장한 사실적인 중세 사극과 다름없다.  하지만 드라마 전개는 엄청 빠르다.
+		현재, 연재되는 소설을 바탕에 두어서 그렇다.
+		나의 수준에서 아직까지는...
+			</p>
+			</blockquote>
+		</div>
+		<div class="span6">
+			<h3>개선사항</h3>
+			<blockquote>
+			<p>
+				의 죽음을 역사는 미리 알고 있었던 것일까? 그리고 그걸 알리려고 했던 것일까? 2007과 2008년 사이 조선의 정조에 관련된 드라마, 영화가 쏟아졌다. 이산, 바람의 화원, 미인도 등 과거와 비교해 볼때 정말 많은 작품이 단기간에 정조 또는 그의 시대를 그려냈다. 무언가를 암시 하고 싶었던 것일까?<br/><br/>
+정조는 사도세자의 아들이다. 이른바의 왕이 되지 못한 자의 아들로 왕위에 오른 그래서 정통성을 인정받지 못한 왕이었다. 대의 명분을 중요시 하던 조선시대에 정통성을 인정 받지 못한다는 것은 그가 앉아있는 곳은 용상이지만, 그의 위엄은 낮고 천한 자리에 있었으리라. 대학도 나오지 못한 대통령, 고졸 출신의 영부인. 그는 시작과 동시에 기득권의 조롱과 무시를 받아야만 했다. 아무도 현직에 있는 대통령을 성씨 하나로 낮춰 부르지 않았것만 그를 무시하고 정통성을 억누르려는 수구들의 모습에서 역사의 데자뷰를 느낀건 지나치 과민반응일까?
+			</p>
+			</blockquote>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+/*<![CATA[*/
+$(function(){
+	$('.graph').find('.graph-bar img').each(function(){
+		$(this).width($(this).parent().width()).height($(this).parent().height());
+	});
+});
+function DrawLine(x1, y1, x2, y2){
+
+    if(y1 < y2){
+        var pom = y1;
+        y1 = y2;
+        y2 = pom;
+        pom = x1;
+        x1 = x2;
+        x2 = pom;
+    }
+
+    var a = Math.abs(x1-x2);
+    var b = Math.abs(y1-y2);
+    var c;
+    var sx = (x1+x2)/2 ;
+    var sy = (y1+y2)/2 ;
+    var width = Math.sqrt(a*a + b*b ) ;
+    var x = sx - width/2;
+    var y = sy;
+
+    a = width / 2;
+
+    c = Math.abs(sx-x);
+
+    b = Math.sqrt(Math.abs(x1-x)*Math.abs(x1-x)+Math.abs(y1-y)*Math.abs(y1-y) );
+
+    var cosb = (b*b - a*a - c*c) / (2*a*c);
+    var rad = Math.acos(cosb);
+    var deg = (rad*180)/Math.PI
+
+    htmlns = "http://www.w3.org/1999/xhtml";
+    div = document.createElementNS(htmlns, "div");
+    div.setAttribute('style','border:1px solid black;width:'+width+'px;height:0px;-ms-transform:rotate('+deg+'deg);position:absolute;top:'+y+'px;left:'+x+'px;');   
+
+    document.getElementById("myElement").appendChild(div);
+
+}
+DrawLine(0,0,200,200);
+/*]]>*/
+</script>
+</body>
+</html>

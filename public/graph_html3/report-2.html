@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Deloitte. Report</title>
+<style type="text/css">
+*{margin:0;padding:0}
+body{font-family:Dotum;font-size:14px}
+#container{position:relative;width:1000px;height:1415px}
+#ground{position:absolute;top:0;left:0}
+#content{position:absolute;top:1121px;left:765px;font-size:16px;font-weight:bold;color:#03215d;line-height:2.15em}
+.graph{position:absolute}
+.graph .viewport{position:relative;height:198px}
+.graph .viewport div{position:absolute;bottom:0}
+.graph .viewport div img{display:block}
+.graph .viewport div span{display:block;position:absolute;padding-top:.2em;width:31px;text-align:center;color:#fff;font-family:Tahoma;font-size:.75em}
+#readership{top:220px;left:40px}
+#readership .viewport{width:265px}
+#readership .viewport div.bar-1{left:11px}
+#readership .viewport div.bar-2{left:64px}
+#readership .viewport div.bar-3{left:117px}
+#readership .viewport div.bar-4{left:170px}
+#readership .viewport div.bar-5{left:223px}
+#timeserial{top:220px;left:696px}
+#timeserial .viewport{width:265px}
+#timeserial .viewport div.bar-1-1{left:11px}
+#timeserial .viewport div.bar-1-2{left:45px}
+#timeserial .viewport div.bar-2-1{left:99px}
+#timeserial .viewport div.bar-2-2{left:133px}
+#timeserial .viewport div.bar-3-1{left:187px}
+#timeserial .viewport div.bar-3-2{left:221px}
+#pillar4{top:506px;left:40px}
+#pillar4 .viewport{width:410px}
+#pillar4 .viewport div.bar-1-1{left:17px}
+#pillar4 .viewport div.bar-1-2{left:51px}
+#pillar4 .viewport div.bar-2-1{left:117px}
+#pillar4 .viewport div.bar-2-2{left:151px}
+#pillar4 .viewport div.bar-3-1{left:217px}
+#pillar4 .viewport div.bar-3-2{left:251px}
+#pillar4 .viewport div.bar-4-1{left:317px}
+#pillar4 .viewport div.bar-4-2{left:351px}
+#readership .viewport div.bar-2 span,
+#readership .viewport div.bar-3 span,
+#readership .viewport div.bar-5 span,
+#timeserial .viewport div.bar-1-2 span,
+#timeserial .viewport div.bar-2-2 span,
+#timeserial .viewport div.bar-3-2 span,
+#pillar4 .viewport div.bar-1-2 span,
+#pillar4 .viewport div.bar-2-2 span,
+#pillar4 .viewport div.bar-3-2 span,
+#pillar4 .viewport div.bar-4-2 span{color:#333}
+#appraisal{position:absolute;top:220px;left:413px}
+#appraisal .viewport{position:relative;width:193px;height:199px}
+#appraisal .viewport img{display:block;position:absolute}
+#appraisal .viewport img.type1{top:0;left:0}
+#appraisal .viewport img.type2{top:0;left:64px}
+#appraisal .viewport img.type3{top:0;left:128px}
+#appraisal .viewport img.type4{top:66px;left:0}
+#appraisal .viewport img.type5{top:66px;left:64px}
+#appraisal .viewport img.type6{top:66px;left:128px}
+#appraisal .viewport img.type7{top:132px;left:0}
+#appraisal .viewport img.type8{top:132px;left:64px}
+#appraisal .viewport img.type9{top:132px;left:128px}
+#swot{position:absolute;top:507px;left:573px}
+#swot table{table-layout:fixed;border-collapse:collapse;border:0 none}
+#swot td{font-size:.9em}
+#swot td.w, #swot td.t{padding-right:10px;width:170px;height:98px}
+#swot td.s, #swot td.o{padding-left:15px;width:160px;height:98px}
+#total-point{position:absolute;top:850px;left:95px;font-weight:bold;color:#03215d}
+#total{position:absolute;top:871px;left:40px}
+#total .viewport{position:relative;width:920px;height:97px}
+#total .viewport div{float:left;width:76px}
+#total .viewport div span{display:block;position:absolute;padding-top:11px;width:76px;font-family:Tahoma;font-size:.8em;color:#03215d;text-align:center}
+#total .viewport div img{display:block;margin-left:33px}
+#total-line{position:absolute}
+#advantage, #improve{position:absolute;top:1130px;width:410px;font-size:.9em;color:#222;line-height:1.5em}
+#advantage{left:40px}
+#improve{left:550px}
+</style>
+<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function(){ setTotal(55.5,66.3,76.5,67.3,76.4,76.4,66.3,76.5,67.3,76.4,66.5,70.9) });
+function setTotal(){
+	var $total = $('#total').find('.viewport'),
+		$line = document.getElementById('total-line'),
+		context = $line.getContext('2d'),
+		tmpl = '<div class="bar-##" style="margin-top:###px"><span>####</span><img src="./images/bar-1.gif" alt="" width="10" height="10"/></div>',
+		html = '', tmp = '', mgt;
+	for(var i = 0, n = 12; i < n; i++){
+		mgt = 93-97/100*arguments[i];
+		tmp = tmpl.replace('##', i+1).replace('###', mgt).replace('####', arguments[i]);
+		html = html + tmp;
+		if(i == 0){
+			context.beginPath();
+			context.moveTo(37+(76*i), Math.abs(mgt)+4);
+		}
+		else{
+			context.lineTo(37+(76*i), Math.abs(mgt)+4);
+			context.moveTo(37+(76*i), Math.abs(mgt)+4);
+		}
+	}
+	context.lineWidth = 1.3;
+	context.strokeStyle = '#03215d';
+	context.lineCap = 'round';
+	context.stroke();
+	$total.html(html);
+};
+/*]]>*/
+</script>
+</head>
+<body>
+
+<div id="container">
+	<div id="ground"><img src="images/2-cover.png" alt="" width="1000" height="1415"/></div>
+	<div id="content">
+		최우성<br/>
+		Adult Group<br/>
+		Director
+	</div>
+</div>
+
+<div id="container">
+	<div id="ground"><img src="images/2-report.png" alt="" width="1000" height="1415"/></div>
+	<div id="readership" class="graph">
+		<div class="viewport">
+			<div class="bar-1">
+				<span>63.5</span>
+				<img src="./images/bar-1.gif" alt="" width="31" height="63.5%"/>
+			</div>
+			<div class="bar-2">
+				<span>67.5</span>
+				<img src="./images/bar-2.gif" alt="" width="31" height="67.5%"/>
+			</div>
+			<div class="bar-3">
+				<span>55.5</span>
+				<img src="./images/bar-3.gif" alt="" width="31" height="55.5%"/>
+			</div>
+			<div class="bar-4">
+				<span>76.5</span>
+				<img src="./images/bar-4.gif" alt="" width="31" height="76.5%"/>
+			</div>
+			<div class="bar-5">
+				<span>66.5</span>
+				<img src="./images/bar-5.gif" alt="" width="31" height="66.5%"/>
+			</div>
+		</div>
+	</div>
+	<div id="appraisal">
+		<div class="viewport">
+			<img class="type5" src="./images/bar-1.gif" alt="" width="65" height="67"/>
+		</div>
+	</div>
+	<div id="timeserial" class="graph">
+		<div class="viewport">
+			<div class="bar-1-1">
+				<span>16.2</span>
+				<img src="./images/bar-1.gif" alt="" width="31" height="16.2%"/>
+			</div>
+			<div class="bar-1-2">
+				<span>67.4</span>
+				<img src="./images/bar-2.gif" alt="" width="31" height="67.4%"/>
+			</div>
+			<div class="bar-2-1">
+				<span>65.2</span>
+				<img src="./images/bar-1.gif" alt="" width="31" height="65.2%"/>
+			</div>
+			<div class="bar-2-2">
+				<span>66.3</span>
+				<img src="./images/bar-2.gif" alt="" width="31" height="66.3%"/>
+			</div>
+			<div class="bar-3-1">
+				<span>65.2</span>
+				<img src="./images/bar-1.gif" alt="" width="31" height="65.2%"/>
+			</div>
+			<div class="bar-3-2">
+				<span>66.3</span>
+				<img src="./images/bar-2.gif" alt="" width="31" height="66.3%"/>
+			</div>
+		</div>
+	</div>
+	<div id="pillar4" class="graph">
+		<div class="viewport">
+			<div class="bar-1-1">
+				<span>64.8</span>
+				<img src="./images/bar-1.gif" alt="" width="31" height="64.8%"/>
+			</div>
+			<div class="bar-1-2">
+				<span>67.8</span>
+				<img src="./images/bar-2.gif" alt="" width="31" height="67.8%"/>
+			</div>
+			<div class="bar-2-1">
+				<span>65.4</span>
+				<img src="./images/bar-1.gif" alt="" width="31" height="65.4%"/>
+			</div>
+			<div class="bar-2-2">
+				<span>66.7</span>
+				<img src="./images/bar-2.gif" alt="" width="31" height="66.7%"/>
+			</div>
+			<div class="bar-3-1">
+				<span>63.8</span>
+				<img src="./images/bar-1.gif" alt="" width="31" height="63.8%"/>
+			</div>
+			<div class="bar-3-2">
+				<span>65.2</span>
+				<img src="./images/bar-2.gif" alt="" width="31" height="65.2%"/>
+			</div>
+			<div class="bar-4-1">
+				<span>68.7</span>
+				<img src="./images/bar-1.gif" alt="" width="31" height="68.7%"/>
+			</div>
+			<div class="bar-4-2">
+				<span>64.4</span>
+				<img src="./images/bar-2.gif" alt="" width="31" height="64.4%"/>
+			</div>
+		</div>
+	</div>
+	<div id="swot">
+		<table>
+		<tbody>
+		<tr>
+			<td class="w">성과지향,전문성,변화주도,비전제시,조직문화창출,사회공헌</td>
+			<td class="s">고객지향,성과지향,네트워킹,변화주도,비전제시,협력적업무수행,동기부여,인재육성,조직문화창출,사회공헌</td>
+		</tr>
+		<tr>
+			<td class="t">협력적업무수행,동기부여,인재육성</td>
+			<td class="o">-</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	<div id="total-point">65.2</div>
+	<div id="total">
+		<canvas id="total-line" width="920" height="97"></canvas>
+		<div class="viewport">
+		</div>
+	</div>
+	<div id="advantage">
+		데커드 케인이 폐허가 된 트리스트람 대성당으로 돌아왔을 때, 디아블로가 이 세상에 나타났던 바로 그 장소에 혜성 하나가 떨어졌습니다. 불타오르는 혜성이 어두운 전조를 드리우며, 되살아난 지옥의 세력과 타락한 천상의 천사들에 맞서 이 세계를 지킬 영웅을 부르고 있습니다.
+	</div>
+	<div id="improve">
+		 아즈모단과 벨리알의 계획은 소수의 악마를 지옥에서 쫓아낸 다음 드러날 가능성이 있다. 아마 그들은 인간들이 근원적인 악마들을 처치할 만큼 충분한 힘을 가지고 있는지 시험하려는 걸 지도 모른다. 아직 그들의 계획에 대해 확실한 걸 알 수는 없지만, 이 두 악마에게서 성역을 지켜야 한다는 사실은 분명하다.<br/><br/>스토리는 클라이막스까지 가봐야 결말이 어떨지 알 수 있는 법이다. 그렇기 때문에 지금 이 부분에 대해서는 아주 적은 정보만 알 수 있는 것이 사실이다. 아마 디아블로를 한 번 더 해치우고 나면 결론을 내릴 수 있을 것이다. 디아블로가 지옥에서 망명한 것은 더 큰 계획에 의해서일 확률이 높다. 그래서 사람들은 이번 디아블로3의 스토리를 더욱 궁금해 하고 있다.
+	</div>
+</div>
+
+</body>
+</html>

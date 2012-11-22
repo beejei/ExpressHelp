@@ -1,0 +1,22 @@
+include common.jade
+
+!!! html
+html
+	head
+		title NODECONF DEMO PAGE
+		mixin Head()
+		script(src='/js/ajaxupload.js')
+	body
+		mixin Topbar()
+		.container
+			section
+				form(method='GET', action='/login')
+					fieldset
+						legend 로그인 폼
+						label 아이디를 입력하세요
+						input(type='text', name='userid', placeholder='Type something…')
+						span.help-block 버튼을 누르시면 로그인됩니다.
+						button.btn(type='submit') Login
+			hr
+		mixin Footer()
+		script(type='text/javascript')

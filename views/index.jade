@@ -1,0 +1,127 @@
+include common.jade
+
+!!! html
+html
+	head
+		title NODECONF DEMO PAGE
+		mixin Head()
+		script(src="/js/ajaxupload.js")
+	body
+		mixin Topbar()
+		.container
+			section
+				br
+			section
+				p.lead
+					| 1. API Call Sample
+				a.btn.btn-large.btn-primary(href='/a/1.0/Hello')
+					| Goto /a/1.0/Hello&nbsp;
+					i.icon-arrow-right.icon-white
+			hr
+			section
+				p.lead
+					| 2. Normal Page Sample
+				a.btn.btn-large.btn-primary(href='/say/hello')
+					| Goto /say/hello&nbsp;
+					i.icon-arrow-right.icon-white
+			hr
+			section
+				p.lead
+					| 3. Lisn.me API
+				a.btn.btn-large.btn-primary(href='/api')
+					| Goto /say/hello&nbsp;
+					i.icon-arrow-right.icon-white
+			hr
+			section
+				p.lead
+					| 4. File Download Sample
+				a.btn.btn-large.btn-primary(href='/mp3/download')
+					| Goto /mp3/download&nbsp;
+					i.icon-arrow-right.icon-white
+			hr
+			section
+				p.lead
+					| 5. EUC-KR GET Page Sample
+				a.btn.btn-large.btn-primary(href='/euc-kr/get.html')
+					| Goto /euc-kr/get&nbsp;
+					i.icon-arrow-right.icon-white
+			hr
+			section
+				p.lead
+					| 6. EUC-KR POST Page Sample
+				a.btn.btn-large.btn-primary(href='/euc-kr/post.html')
+					| Goto /euc-kr/post&nbsp;
+					i.icon-arrow-right.icon-white
+			hr
+			script(type='text/javascript')
+				// 공통 전역
+				var end, elem;
+				function ajaxRefresh(){
+					jQuery.get('/uploadprogress',function(data){
+						jQuery(elem).html('('+data+'%)');
+						if(end===false){
+							setTimeout(ajaxRefresh,100);
+						}
+					});
+				}
+			section
+				p.lead
+					| 7. AJAX Upload Sample &nbsp;
+					span#uploadprg1
+				a#uploadtest1.btn.btn-large.btn-primary()
+					| Upload A File&nbsp;
+					i.icon-arrow-right.icon-white
+				script(type='text/javascript')
+					jQuery(
+						function(){                    
+							new AjaxUpload('uploadtest1', {
+								action: '/upload',						// upload test url
+								name: 'userfile',						// file의 element name, 넣지 않을 경우 디폴트는 userfile
+								onSubmit: function(file, extension){	// onSubmit : 서브밋 직전에 호출, return false하면 서브밋 안함
+									end = false;
+									elem = '#uploadprg1';
+									setTimeout(ajaxRefresh,100);
+								},
+								onComplete: function(file, response){	// onComplete : 업로드 완료 후 호출
+									end = true;
+									if(/413 Request Entity Too Large/.test(response))
+										alert('5MB이하의 파일로 업로드해주세요');
+									else
+										alert(response);				//업로드 결과 출력
+								}
+							});
+						}                    
+					);
+			hr
+			section
+				p.lead
+					| 8. AJAX Upload Sample(Multiple) &nbsp;
+					span#uploadprg2
+				a#uploadtest2.btn.btn-large.btn-primary()
+					| Upload Multiple Files&nbsp;
+					i.icon-arrow-right.icon-white
+				script(type='text/javascript')
+					jQuery(
+						function(){                    
+							new AjaxUpload('uploadtest2', {
+								action: '/upload',						// upload test url
+								name: 'userfile[]',						// file의 element name, 넣지 않을 경우 디폴트는 userfile
+								multiple: true,							// 여러 파일 선택 가능한가
+								onSubmit: function(file, extension){	// onSubmit : 서브밋 직전에 호출, return false하면 서브밋 안함
+									end = false;
+									elem = '#uploadprg2';
+									setTimeout(ajaxRefresh,100);
+								},
+								onComplete: function(file, response){	// onComplete : 업로드 완료 후 호출
+									end = true;
+									if(/413 Request Entity Too Large/.test(response))
+										alert('5MB이하의 파일로 업로드해주세요');
+									else
+										alert(response);				//업로드 결과 출력
+								}
+							});
+						}                    
+					);
+			hr
+		mixin Footer()
+		script(type='text/javascript')
